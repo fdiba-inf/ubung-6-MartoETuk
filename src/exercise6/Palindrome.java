@@ -8,8 +8,21 @@ public class Palindrome {
 
         int number = input.nextInt();
         assert number > 0;
-        for (int index = 0;; index*=10) {
-          int a = number % index;
-          number = (number - a) / 10;
+        int palindrome = 0;
+        int preslava = number;
+
+        while (preslava > 0) {
+          int a = preslava % 10;
+          preslava = (preslava - a) / 10;
+          palindrome *= 10;
+          palindrome = palindrome + a; 
         }
+
+        boolean pal = false;
+        if (palindrome == number) {
+          pal = true;
+        }
+
+        System.out.println("Palindrome: " + pal);
+    }
 }

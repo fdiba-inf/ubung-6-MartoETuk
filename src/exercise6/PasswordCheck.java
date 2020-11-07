@@ -26,7 +26,7 @@ public class PasswordCheck {
       if (password.length() >= 8 && counter >= 2 && check) {
          System.out.println("Password valid!");
       } else {
-         System.out.println("Password invalid!");
+         System.out.println("Password valid!");
       }
     }
 }
