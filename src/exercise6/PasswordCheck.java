@@ -10,21 +10,23 @@ public class PasswordCheck {
         boolean check = true;
         int counter = 0;
 
-        for (int index = 0; index < password.length(); index++) {
-          if (!Character.isLetterOrDigit(password.charAt(index))) {
-            check = false;
-            break;
-          }
-
-          if (Character.isDigit(password.charAt(index))) {
-            counter++;
-          } 
+      for (int index = 0; index < password.length(); index++) {
+        if (Character.isDigit(password.charAt(index))) {
+          counter++;
         }
+      }
 
-        if (password.length() >= 8 && counter >= 2 && check == true) {
-          System.out.println("Password valid!");
-        } else {
-          System.out.println("Passwword invalid");
+      for (int index = 0; index < password.length(); index++) {
+        if (!Character.isLetterOrDigit(password.charAt(index))) {
+          check = false;
+          break;
         }
+      }
+
+      if (password.length() >= 8 && counter >= 2 && check) {
+         System.out.println("Password valid!");
+      } else {
+         System.out.println("Password invalid!");
+      }
     }
 }
